@@ -1,0 +1,17 @@
+footer{
+    height: 150px;
+    background-color: dimgray;    
+}
+
+footer .holder{
+    
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-family: 'roboto';
+    font-size: 12px;
+    box-sizing: border-box;
+    padding-top: 1.5em;
+    line-height: 1.5em;
+    background-image: url("../../../../public/images/pie.png");
+}
