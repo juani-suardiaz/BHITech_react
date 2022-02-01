@@ -7,7 +7,7 @@ function Footer () {
 
         <footer>
 
-            <div class="holder">
+            <div className="holder">
                 <strong>Instituto Tecnológico de Bahía Blanca</strong>
                 <br/>
                 Fitz Roy 804 - Bahía Blanca - 8000FTN - Provincia de Buenos Aires - República Argentina

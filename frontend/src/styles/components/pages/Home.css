@@ -1,0 +1,100 @@
+#slider{
+    position: relative;
+    height: 500px;
+    width: 1000px;    
+    padding: 0;
+    background-image: url("../../../../public/images/edificio_1.png");
+}
+
+#zocalo{
+    position: absolute; 
+    background-color: rgba(255, 255, 255, 0.6); 
+    width: 500px; 
+    height: 80px; 
+    right: 0px;
+    top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding-left: 20px;
+    line-height: 1.6;    
+}
+
+.cajaGraduados {
+    height: 200px;    
+    border: solid 1px black;
+    border-radius: 15px;
+    display: flex;
+}
+
+.testimonioGraduado{
+    width:800px;    
+    padding: 10px;
+    font-size: 18px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+.testimonioGraduado address{
+    float: left;
+}
+
+.testimonioGraduado a{
+    float: right;
+    text-decoration: none;
+}
+
+.fotoGraduado{
+    width: 200px;    
+    text-align: center;
+    padding-top: 7px;
+}
+
+#parallax{
+    margin-top: 50px;
+    width: 1000px;
+    height: 300px;
+    background-image: url("../../../../public/images/edificio_2.png");
+    /* efectos parallax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto    
+}
+
+#carreras{
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+#cajaCarreras{
+    display: flex;
+    justify-content: space-between;    
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: black; */
+}
+
+#carreras a{
+    display: inline-block;
+    width: 235px;
+    height: 235px;
+    background-color: rgb(218, 165, 32);  
+    border-radius: 50px;  
+    font-size: 25px;    
+    color: white;    
+    text-align: center;
+    padding-top: 80px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#carreras a:hover{
+    background-color: rgba(218, 165, 32, 0.8);  
+}
+
+#mapa iframe{
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: black;
+}

@@ -7,7 +7,7 @@ function Nav () {
     return (
 
         <nav>
-            <div class="holder">
+            <div className="holder">
                 <ul>
                     <li><NavLink to="/">Inicio</NavLink></li>
                     <li><NavLink to="/institucion">La Institución</NavLink></li>
