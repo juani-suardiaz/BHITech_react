@@ -33,3 +33,7 @@ nav ul li a{
 nav ul li a:hover{    
     background-color: brown;
 }
+
+.activo{
+    background-color: rgb(206, 161, 140);
+}

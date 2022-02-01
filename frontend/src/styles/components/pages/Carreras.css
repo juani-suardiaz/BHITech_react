@@ -1,0 +1,88 @@
+.tablaMaterias{
+    width: 100%;
+    font-family: 'roboto';
+    font-size: 14px;
+}
+
+thead tr{
+    background-color: black;
+    color: white;  
+}
+
+thead tr th:first-child{
+    width: 10%
+}
+
+thead tr th:last-child{
+    width: 10%
+}
+
+tbody tr td{
+    border: solid 1px black;
+}
+
+tbody tr td:first-child, tbody tr td:last-child{
+    text-align:center
+}
+
+tbody tr td:nth-child(2){
+    padding-left: 5px;
+}
+
+.tablaMaterias thead tr{
+    background-color: gray;
+}
+
+#cicloBasico,
+#desarrolloDeSoftware,
+#cienciaDeDatos,
+#internetDeLasCosas,
+#inteligenciaArtificial,
+.detalleCarrera {
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;    
+}
+
+.detalleCarrera {
+    text-align: justify;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: solid 1px rgb(218, 165, 32);
+    border-right: solid 1px rgb(218, 165, 32);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.tituloCarrera{
+    background-color: rgb(218, 165, 32);
+    height: 40px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: white;
+    border: solid 1px rgb(218, 165, 32);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.planCarrera {
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: solid 1px rgb(218, 165, 32);;
+    border-right: solid 1px rgb(218, 165, 32);;
+    border-bottom: solid 1px rgb(218, 165, 32);;
+}
+
+#cicloBasico,
+#desarrolloDeSoftware,
+#cienciaDeDatos,
+#internetDeLasCosas,
+#inteligenciaArtificial {
+    padding-bottom: 25px;
+}

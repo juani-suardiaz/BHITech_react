@@ -1,0 +1,37 @@
+.cajaNovedad{
+    background-color:rgb(160, 189, 192);
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.tituloNovedad,
+.subtituloNovedad,
+.fechaNovedad,
+.textoNovedad{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.tituloNovedad{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.subtituloNovedad{
+    font-weight: bold;
+}
+
+.fechaNovedad{
+    font-size: 14px;
+}
+
+.textoNovedad{
+    text-align: justify;
+    /* background-color: gray; */
+}

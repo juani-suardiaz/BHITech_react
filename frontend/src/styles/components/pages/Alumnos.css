@@ -1,0 +1,41 @@
+.cajaAlumnos{    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.tablaAlumnos {
+    width: 100%;
+    font-family: 'roboto';
+    font-size: 14px;
+}
+
+thead tr{
+    background-color: black;
+    color: white;  
+}
+
+thead tr th:first-child{
+    width: 10%
+}
+
+thead tr th:last-child{
+    width: 10%
+}
+
+tbody tr td{
+    border: solid 1px black;
+}
+
+tbody tr td:first-child, tbody tr td:last-child{
+    text-align:center
+}
+
+tbody tr td:nth-child(2){
+    padding-left: 5px;
+}
+
+.tablaMaterias thead tr{
+    background-color: gray;
+}
