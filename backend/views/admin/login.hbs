@@ -1,7 +1,24 @@
-<h1>Ingrese su usuario y contraseña para ingresar al sistema</h1>
-<form method="post" action="/admin/login">
-    <input type="text" placeholder="usuario" name="usuario" required>
-    <input type="text" placeholder="password" name="password" required>
-    <input type="submit" value="ENVIAR">
-</form>
-<p>{{mensaje}}</p>
+    <main>
+
+        <div class="holder">
+
+            <h1 style="text-align: center; padding-top:20px;">Panel de administrador</h1>
+
+            <form method="post" action="/admin/login">
+
+                <div id="cajaFormulario">
+
+                    <input type="text" name="usuario" placeholder="usuario" required>
+                    <input type="password" name="password" placeholder="password" required>
+
+                    <input type="submit" value="ENVIAR">
+
+                </div>
+
+            </form>
+
+            <p>{{mensaje}}</p>
+
+        </div>
+
+    </main>
