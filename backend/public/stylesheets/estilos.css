@@ -7,10 +7,6 @@ body{
     margin: auto;   
 }
 
-.activo{
-    background-color: rgb(206, 161, 140);
-}
-
 header{
     width: 100%;
     height: 90px;
@@ -50,64 +46,6 @@ h1{
     
 }
 
-nav {    
-    height: 30px;
-    background-color: sienna;
-}
-
-nav ul{    
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    /* color: white; */
-    width: 163px;
-    text-align: center;
-    height: 30px;        
-    font-family: 'roboto';
-    margin: 0px;
-    list-style: none;
-}
-
-nav ul li a{
-    display: inline-block;    
-    width: 100%;
-    height: 100%;
-    padding-top: 5px;
-    box-sizing: border-box;
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li a:hover{    
-    background-color: brown;
-}
-
-#slider{
-    position: relative;
-    height: 500px;
-    width: 1000px;    
-    padding: 0;
-    background-image: url("../images/edificio_1.png");
-}
-
-#zocalo{
-    position: absolute; 
-    background-color: rgba(255, 255, 255, 0.6); 
-    width: 500px; 
-    height: 80px; 
-    right: 0px;
-    top: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    box-sizing: border-box;
-    padding-left: 20px;
-    line-height: 1.6;    
-}
-
 footer{
     height: 150px;
     background-color: dimgray;    
@@ -126,80 +64,9 @@ footer .holder{
     background-image: url("../images/pie.png");
 }
 
-.cajaGraduados, .cajaGraduados2{
-    height: 200px;    
-    border: solid 1px black;
-    border-radius: 15px;
-    display: flex;
-}
 
-.cajaGraduados2{
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 15px;
-}
 
-.testimonioGraduado{
-    width:800px;    
-    padding: 10px;
-    font-size: 18px;
-    text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-}
 
-.cajaGraduados2:nth-child(odd) .testimonioGraduado {
-    padding-left: 0px;
-}
-
-.cajaGraduados2:nth-child(even) address {    
-    float: right;
-}
-
-.testimonioGraduado address{
-    float: left;
-}
-
-.testimonioGraduado a{
-    float: right;
-    text-decoration: none;
-}
-
-.fotoGraduado{
-    width: 200px;    
-    text-align: center;
-    padding-top: 7px;
-}
-
-#carreras{
-    border-top: solid 1px black;
-    border-bottom: solid 1px black;
-}
-
-#cajaCarreras{
-    display: flex;
-    justify-content: space-between;    
-    font-family: Arial, Helvetica, sans-serif;
-    /* background-color: black; */
-}
-
-#carreras a{
-    display: inline-block;
-    width: 235px;
-    height: 235px;
-    background-color: rgb(218, 165, 32);  
-    border-radius: 50px;  
-    font-size: 25px;    
-    color: white;    
-    text-align: center;
-    padding-top: 80px;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-#carreras a:hover{
-    background-color: rgba(218, 165, 32, 0.8);  
-}
 
 section h2 {
     font-family: 'roboto';
@@ -207,17 +74,7 @@ section h2 {
     display: inline-block;
 }
 
-#parallax{
-    margin-top: 50px;
-    width: 1000px;
-    height: 300px;
-    background-image: url("../images/edificio_2.png");
-    /* efectos parallax */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:auto    
-}
+
 
 section{
     /* background-color: red; */
@@ -232,12 +89,7 @@ main .holder{
     padding-bottom: 30px;
 }
 
-.cajaAlumnos{    
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+
 
 .tablaAlumnos, .tablaMaterias{
     width: 100%;
@@ -274,59 +126,7 @@ tbody tr td:nth-child(2){
     background-color: gray;
 }
 
-#cicloBasico,
-#desarrolloDeSoftware,
-#cienciaDeDatos,
-#internetDeLasCosas,
-#inteligenciaArtificial,
-.detalleCarrera {
-    box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;    
-}
 
-.detalleCarrera {
-    text-align: justify;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-left: solid 1px rgb(218, 165, 32);
-    border-right: solid 1px rgb(218, 165, 32);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-}
-
-.tituloCarrera{
-    background-color: rgb(218, 165, 32);
-    height: 40px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    color: white;
-    border: solid 1px rgb(218, 165, 32);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    padding-top: 10px;
-    box-sizing: border-box;
-}
-
-.planCarrera {
-    box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-left: solid 1px rgb(218, 165, 32);;
-    border-right: solid 1px rgb(218, 165, 32);;
-    border-bottom: solid 1px rgb(218, 165, 32);;
-}
-
-#cicloBasico,
-#desarrolloDeSoftware,
-#cienciaDeDatos,
-#internetDeLasCosas,
-#inteligenciaArtificial {
-    padding-bottom: 25px;
-}
 
 .cajaNovedad{
     background-color:rgb(160, 189, 192);
@@ -402,44 +202,3 @@ form input[type="submit"] {
     margin-left: auto;
 }
 
-.cajaDocente{
-    height: 200px;
-    border-radius: 15px;
-    border: solid 1px black;
-    display: flex;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-.fotoDocente{
-    width: 200px;
-    text-align: center;
-    padding-top: 7px;
-    /* background-color: orange; */
-}
-
-.infoDocente{
-    width: 800px;
-    padding-left: 5px;
-    padding-right: 25px;
-    text-align: justify;
-    box-sizing: border-box;
-    /* background-color: green; */
-}
-
-#cajaHistoria, #infoContacto{
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: justify;
-    font-family: Arial, Helvetica, sans-serif;
-    /* font-size: 14px; */
-}
-
-#mapa iframe{
-    border-width: 0px 0px 1px 0px;
-    border-style: solid;
-    border-color: black;
-}

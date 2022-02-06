@@ -1,0 +1,40 @@
+<h1>bienvenidos</h1>
+<h2>{{mensaje}}</h2>
+
+<a href="/admin/login/logout">CERRAR SESIóN</a>
+
+{{#each novedades}}
+
+<div class="cajaNovedad">
+    <table class="tablaNovedad">
+        <tr>
+            <td>ID NOVEDAD</td>
+            <td>{{id_novedad}}</td>
+        </tr>    
+        <tr>
+            <td>TITULO</td>
+            <td>{{titulo}}</td>
+        </tr>
+        <tr>
+            <td>SUBTITULO</td>
+            <td>{{subtitulo}}</td>
+        </tr>
+        <tr>
+            <td>CONTENIDO</td>
+            <td>{{contenido}}</td>
+        </tr>
+        <tr>
+            <td>FECHA</td>
+            <td>{{fecha}}</td>
+        </tr>
+    
+    </table>
+
+    <div class="baseNovedad">
+        <div>modificar</div>
+        <div>eliminar</div>
+    </div>
+
+</div>
+
+{{/each}}

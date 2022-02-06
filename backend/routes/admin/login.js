@@ -10,7 +10,7 @@ router.get('/', function (req, res, next) {
 
     } else {
 
-        res.redirect('/admin/panel');
+        res.redirect('/admin/novedades');
 
     }    
 
@@ -30,17 +30,25 @@ router.get('/logout', function (req, res, next) {
 
 router.post('/', async function(req, res, next){
 
-    var data = await consulta.buscarUsuario(req.body.usuario, req.body.password);
+    var data = await consulta.buscarUsuario(req.body.usuario);
 
     if (data == undefined) {
 
-        res.render('admin/login',{layout: './admin/layout', mensaje: 'usuario y password incorrectos'})
+        res.render('admin/login',{layout: './admin/layout', mensaje: 'El usuario no existe'})
 
     } else {
 
-        req.session.id_usuario = data.id_usuario
+        if (data.password != req.body.password) {
 
-        res.redirect('/admin/panel');
+            res.render('admin/login',{layout: './admin/layout', mensaje: 'La contraseña ingresada es incorrecta'})
+
+        } else {
+
+            req.session.id_usuario = data.id_usuario
+
+            res.redirect('/admin/novedades');
+
+        }
 
     }
 
