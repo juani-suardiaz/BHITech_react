@@ -20,4 +20,11 @@ async function buscarNovedades () {
     return resultado;
 }
 
-module.exports = {buscarUsuario, buscarNovedades};
+async function cargarNovedad (registro) {
+
+    var consulta = 'INSERT INTO novedades SET ?';
+
+    await pool.query(consulta, [registro]);
+}
+
+module.exports = {buscarUsuario, buscarNovedades, cargarNovedad};

@@ -1,7 +1,18 @@
-<h1>bienvenidos</h1>
-<h2>{{mensaje}}</h2>
+<h1>{{mensaje}}</h1>
 
-<a href="/admin/login/logout">CERRAR SESIóN</a>
+<a id="botonCerrarSesion" href="/admin/login/logout">CERRAR SESION</a>
+
+<h2>Novedades cargadas</h2>
+
+<a id="botonCargarNovedad" href="/admin/novedades/cargar">CARGAR NOVEDAD</a>
+
+{{#if tablaVacia}}
+
+<div id="cajaVacia">No hay novedades cargadas</div>
+
+{{/if}}
+
+{{#unless tablaVacia}}
 
 {{#each novedades}}
 
@@ -31,10 +42,12 @@
     </table>
 
     <div class="baseNovedad">
-        <div>modificar</div>
-        <div>eliminar</div>
+        <a href="/admin/novedades/modificar">modificar</a>
+        <a href="/admin/novedades/eliminar">eliminar</a>
     </div>
 
 </div>
 
 {{/each}}
+
+{{/unless}}

@@ -44,7 +44,8 @@ router.post('/', async function(req, res, next){
 
         } else {
 
-            req.session.id_usuario = data.id_usuario
+            req.session.id_usuario = data.id_usuario;
+            req.session.nombre_usuario = data.nombre_usuario;
 
             res.redirect('/admin/novedades');
 

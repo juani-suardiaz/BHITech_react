@@ -14,9 +14,11 @@ header{
     
 }
 
-h1{    
-    margin-top: 0;
-    font-family: "roboto";
+h1{
+    font-family: Arial, Helvetica, sans-serif;  
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #cajaLogo{
@@ -46,7 +48,11 @@ h1{
     
 }
 
-footer{
+main{
+    padding-left: 5px;
+}
+
+footer{    
     height: 150px;
     background-color: dimgray;    
 }
@@ -64,106 +70,38 @@ footer .holder{
     background-image: url("../images/pie.png");
 }
 
-
-
-
-
-section h2 {
-    font-family: 'roboto';
-    background-color: lightgreen;
-    display: inline-block;
+h2 {
+    font-family: Arial, Helvetica, sans-serif;    
+    
 }
 
-
-
-section{
-    /* background-color: red; */
-    padding-top: 10px;
-    padding-bottom: 10px
+.cajaNovedad{
+    width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
-main .holder{
-    border-left: dashed 1px black;
-    border-right: dashed 1px black;
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-
-
-
-.tablaAlumnos, .tablaMaterias{
+.tablaNovedad{
     width: 100%;
-    font-family: 'roboto';
-    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;    
 }
 
-thead tr{
-    background-color: black;
-    color: white;  
-}
-
-thead tr th:first-child{
-    width: 10%
-}
-
-thead tr th:last-child{
-    width: 10%
-}
-
-tbody tr td{
+td{
     border: solid 1px black;
 }
 
-tbody tr td:first-child, tbody tr td:last-child{
+td:first-child{
+    width: 20%;
+    background-color: black;
+    color: white;  
     text-align:center
 }
 
-tbody tr td:nth-child(2){
-    padding-left: 5px;
-}
-
-.tablaMaterias thead tr{
-    background-color: gray;
-}
-
-
-
-.cajaNovedad{
-    background-color:rgb(160, 189, 192);
-    border-radius: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.tituloNovedad,
-.subtituloNovedad,
-.fechaNovedad,
-.textoNovedad{
-padding-left: 15px;
-padding-right: 15px;
-padding-top: 5px;
-padding-bottom: 5px;
-box-sizing: border-box;
-}
-
-.tituloNovedad{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.subtituloNovedad{
-    font-weight: bold;
-}
-
-.fechaNovedad{
-    font-size: 14px;
-}
-
-.textoNovedad{
-    text-align: justify;
-    /* background-color: gray; */
+td:last-child{
+    width: 80%;
+    text-align:left;
+    padding-left: 10px;    
 }
 
 form{
@@ -202,3 +140,53 @@ form input[type="submit"] {
     margin-left: auto;
 }
 
+#botonCerrarSesion, #botonCargarNovedad{    
+    text-align: center;
+    height: 20px;
+    width: 200px;
+    color: white;    
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#botonCerrarSesion{
+    background-color: red;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#botonCargarNovedad{
+    background-color: green;
+}
+
+.baseNovedad{
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.baseNovedad a{
+    width: 9%;
+    display: inline-block;
+    height: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.baseNovedad a:first-child {
+    background-color: gray;
+    color: black;
+}
+
+.baseNovedad a:last-child{
+    background-color: black;
+    color: white;
+}
+
+#cajaVacia{
+    height: 300px;
+    text-align: center;
+}
