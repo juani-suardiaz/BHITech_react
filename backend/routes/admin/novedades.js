@@ -11,7 +11,7 @@ router.get('/', async function (req, res, next) {
 
     } else {
 
-        var novedades = await consulta.buscarNovedades();
+        var novedades = await consulta.traerNovedades();
 
         var tablaVacia = (novedades[0] == undefined);
 
@@ -60,16 +60,63 @@ router.post('/cargar', async function (req, res, next) {
             fecha: anio + '-' + mes + '-' + dia
         }
 
-        await consulta.cargarNovedad(registro);
+        await consulta.insertarNovedad(registro);
 
-        var novedades = await consulta.buscarNovedades();
-
-        res.render('./admin/novedades',{layout: './admin/layout', mensaje: "Bienvenido " + req.session.nombre_usuario, novedades, tablaVacia: false});
+        res.redirect('/admin/novedades');
 
         //console.log(req.session == undefined)
 
     }        
 
 })
+
+router.get('/modificar/:id', async function (req, res, next) {
+
+    if (req.session.id_usuario == undefined) {
+
+        res.redirect('/admin/login');
+
+    } else {
+
+        var num_novedad = req.params.id;
+
+        var novedad = await consulta.buscarNovedad(num_novedad);
+
+        res.render('./admin/modificar',{layout: './admin/layout', mensaje: "Bienvenido " + req.session.nombre_usuario, novedad});
+
+        //console.log(req.session == undefined)
+
+    } 
+
+})
+
+//
+
+router.post('/modificar/:id', async function (req, res, next) {
+
+    if (req.session.id_usuario == undefined) {
+
+        res.redirect('/admin/login');
+
+    } else {
+
+        const registro = {            
+            titulo: req.body.tituloNovedad,
+            subtitulo: req.body.subtituloNovedad,
+            contenido: req.body.contenidoNovedad,
+            id_novedad: req.params.id
+        }
+
+        await consulta.modificarNovedad(registro);
+
+        res.redirect('/admin/novedades');
+
+        //console.log(req.session == undefined)
+
+    }        
+
+})
+
+//
 
 module.exports = router;

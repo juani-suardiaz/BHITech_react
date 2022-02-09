@@ -78,11 +78,11 @@ h2 {
 .cajaNovedad{
     width: 1200px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 30px;    
 }
 
 .tablaNovedad{
-    width: 100%;
+    width: 1200px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;    
 }
@@ -92,16 +92,16 @@ td{
 }
 
 td:first-child{
-    width: 20%;
+    width: 240px;
     background-color: black;
     color: white;  
     text-align:center
 }
 
 td:last-child{
-    width: 80%;
+    max-width: 960px;    
     text-align:left;
-    padding-left: 10px;    
+    padding-left: 10px;  
 }
 
 form{
@@ -140,7 +140,7 @@ form input[type="submit"] {
     margin-left: auto;
 }
 
-#botonCerrarSesion, #botonCargarNovedad{    
+#botonCerrarSesion, #botonCargarNovedad, #botonCancelar{    
     text-align: center;
     height: 20px;
     width: 200px;
@@ -153,14 +153,22 @@ form input[type="submit"] {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#botonCerrarSesion{
-    background-color: red;
+#botonCerrarSesion, #botonCancelar{
     margin-left: auto;
     margin-right: auto
 }
 
+#botonCerrarSesion{
+    background-color: red;
+}
+
 #botonCargarNovedad{
     background-color: green;
+}
+
+#botonCancelar{
+    background-color: orange;
+    margin-bottom: 20px;
 }
 
 .baseNovedad{
@@ -189,4 +197,21 @@ form input[type="submit"] {
 #cajaVacia{
     height: 300px;
     text-align: center;
+}
+
+#formularioCargarNovedad,
+#formularioModificarNovedad{
+    border-radius: 0px;
+    border: solid 1px black;
+    padding: 10px;
+    width: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#formularioCargarNovedad input[type="text"],
+#formularioCargarNovedad textarea,
+#formularioModificarNovedad input[type="text"],
+#formularioModificarNovedad textarea{
+    width: 100%;
 }
