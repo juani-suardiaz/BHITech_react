@@ -199,8 +199,7 @@ form input[type="submit"] {
     text-align: center;
 }
 
-#formularioCargarNovedad,
-#formularioModificarNovedad{
+#formularioNovedad {
     border-radius: 0px;
     border: solid 1px black;
     padding: 10px;
@@ -209,9 +208,7 @@ form input[type="submit"] {
     margin-bottom: 20px;
 }
 
-#formularioCargarNovedad input[type="text"],
-#formularioCargarNovedad textarea,
-#formularioModificarNovedad input[type="text"],
-#formularioModificarNovedad textarea{
+#formularioNovedad input[type="text"],
+#formularioNovedad textarea {
     width: 100%;
 }

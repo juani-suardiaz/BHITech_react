@@ -15,7 +15,7 @@ router.get('/', async function (req, res, next) {
 
         var tablaVacia = (novedades[0] == undefined);
 
-        res.render('./admin/novedades',{layout: './admin/layout', mensaje: "Bienvenido " + req.session.nombre_usuario, novedades, tablaVacia});
+        res.render('./admin/novedades',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, novedades, tablaVacia});
 
         //console.log(req.session == undefined)
 
@@ -31,7 +31,7 @@ router.get('/cargar', async function (req, res, next) {
 
     } else {
 
-        res.render('./admin/cargar',{layout: './admin/layout', mensaje: "Bienvenido " + req.session.nombre_usuario});
+        res.render('./admin/cargar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario});
 
         //console.log(req.session == undefined)
 
@@ -82,15 +82,13 @@ router.get('/modificar/:id', async function (req, res, next) {
 
         var novedad = await consulta.buscarNovedad(num_novedad);
 
-        res.render('./admin/modificar',{layout: './admin/layout', mensaje: "Bienvenido " + req.session.nombre_usuario, novedad});
+        res.render('./admin/modificar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, novedad});
 
         //console.log(req.session == undefined)
 
     } 
 
 })
-
-//
 
 router.post('/modificar/:id', async function (req, res, next) {
 
@@ -108,6 +106,48 @@ router.post('/modificar/:id', async function (req, res, next) {
         }
 
         await consulta.modificarNovedad(registro);
+
+        res.redirect('/admin/novedades');
+
+        //console.log(req.session == undefined)
+
+    }        
+
+})
+
+router.get('/eliminar/:id', async function (req, res, next) {
+
+    if (req.session.id_usuario == undefined) {
+
+        res.redirect('/admin/login');
+
+    } else {
+
+        var num_novedad = req.params.id;
+
+        var novedad = await consulta.buscarNovedad(num_novedad);
+
+        res.render('./admin/eliminar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, novedad});
+
+        //console.log(req.session == undefined)
+
+    } 
+
+})
+
+//
+
+router.post('/eliminar/:id', async function (req, res, next) {
+
+    if (req.session.id_usuario == undefined) {
+
+        res.redirect('/admin/login');
+
+    } else {
+
+        var num_novedad = req.params.id;
+
+        await consulta.eliminarNovedad(num_novedad);
 
         res.redirect('/admin/novedades');
 

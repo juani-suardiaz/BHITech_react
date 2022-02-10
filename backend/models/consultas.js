@@ -29,7 +29,7 @@ async function insertarNovedad (registro) {
 
 async function buscarNovedad (id) {
 
-    var consulta = 'SELECT * FROM novedades WHERE id_novedad = ?';
+    var consulta = "SELECT id_novedad, titulo, subtitulo, contenido, CONCAT(DAY(fecha),'/',MONTH(fecha),'/',YEAR(fecha)) AS fecha FROM novedades WHERE id_novedad = ?;"
 
     var resultado = await pool.query(consulta,[id]);
 
@@ -43,4 +43,12 @@ async function modificarNovedad (registro) {
     await pool.query(consulta, [registro.titulo, registro.subtitulo, registro.contenido, registro.id_novedad]);
 }
 
-module.exports = {buscarUsuario, traerNovedades, insertarNovedad, buscarNovedad, modificarNovedad};
+async function eliminarNovedad (id) {
+
+    var consulta = 'DELETE FROM novedades WHERE id_novedad = ?';
+
+    await pool.query(consulta,[id]);
+
+}
+
+module.exports = {buscarUsuario, traerNovedades, insertarNovedad, buscarNovedad, modificarNovedad, eliminarNovedad};
