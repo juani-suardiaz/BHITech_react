@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var consulta = require('../../models/consultas');
+var md5 = require('md5');
 
 router.get('/', function (req, res, next) {
 
@@ -30,26 +31,34 @@ router.get('/logout', function (req, res, next) {
 
 router.post('/', async function(req, res, next){
 
-    var data = await consulta.buscarUsuario(req.body.usuario);
+    try {
 
-    if (data == undefined) {
+        var data = await consulta.buscarUsuario(req.body.usuario);
 
-        res.render('admin/login',{layout: './admin/layout', mensaje: 'El usuario no existe'})
-
-    } else {
-
-        if (data.password != req.body.password) {
-
-            res.render('admin/login',{layout: './admin/layout', mensaje: 'La contraseña ingresada es incorrecta'})
-
+        if (data == undefined) {
+    
+            res.render('admin/login',{layout: './admin/layout', mensaje: 'El usuario no existe'})
+    
         } else {
+    
+            if (data.password != md5(req.body.password)) {
+    
+                res.render('admin/login',{layout: './admin/layout', mensaje: 'La contraseña ingresada es incorrecta'})
+    
+            } else {
+    
+                req.session.id_usuario = data.id_usuario;
+                req.session.nombre_usuario = data.nombre_usuario;
+    
+                res.redirect('/admin/novedades');
+    
+            }
+    
+        }        
 
-            req.session.id_usuario = data.id_usuario;
-            req.session.nombre_usuario = data.nombre_usuario;
+    } catch (error) {
 
-            res.redirect('/admin/novedades');
-
-        }
+        console.log(error);
 
     }
 

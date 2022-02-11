@@ -1,13 +1,20 @@
-//require('dotenv').config();
 var pool = require('./bd');
 
 async function buscarUsuario (usuario) {
 
-    var consulta = 'SELECT * FROM usuarios WHERE nombre_usuario = ?';
+    try {
 
-    var resultado = await pool.query(consulta,[usuario]);
+        var consulta = 'SELECT * FROM usuarios WHERE nombre_usuario = ?';
 
-    return resultado[0];
+        var resultado = await pool.query(consulta,[usuario]);
+    
+        return resultado[0];        
+
+    } catch(error) {
+
+        throw error;
+
+    }
 
 }
 
@@ -22,9 +29,18 @@ async function traerNovedades () {
 
 async function insertarNovedad (registro) {
 
-    var consulta = 'INSERT INTO novedades SET ?';
+    try {
 
-    await pool.query(consulta, [registro]);
+        var consulta = 'INSERT INTO novedades SET ?';
+
+        await pool.query(consulta, [registro]);        
+
+    } catch(error) {
+
+        throw error;
+
+    }    
+
 }
 
 async function buscarNovedad (id) {

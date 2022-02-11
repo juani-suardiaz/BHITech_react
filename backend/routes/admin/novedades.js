@@ -1,5 +1,4 @@
 var express = require('express');
-const session = require('express-session');
 var router = express.Router();
 var consulta = require('../../models/consultas');
 
@@ -41,32 +40,41 @@ router.get('/cargar', async function (req, res, next) {
 
 router.post('/cargar', async function (req, res, next) {
 
-    if (req.session.id_usuario == undefined) {
+    try {
 
-        res.redirect('/admin/login');
+        if (req.session.id_usuario == undefined) {
 
-    } else {
+            res.redirect('/admin/login');
+    
+        } else {
+    
+            var fechaNovedad = new Date;
+            var anio = fechaNovedad.getFullYear();
+            var mes = fechaNovedad.getMonth() + 1;
+            var dia = fechaNovedad.getDate();
+    
+            const registro = {
+                id_novedad: null,
+                titulo: req.body.tituloNovedad,
+                subtitulo: req.body.subtituloNovedad,
+                contenido: req.body.contenidoNovedad,
+                fecha: anio + '-' + mes + '-' + dia
+            }
+    
+            await consulta.insertarNovedad(registro);
+    
+            res.redirect('/admin/novedades');
+    
+            //console.log(req.session == undefined)
+    
+        }        
 
-        var fechaNovedad = new Date;
-        var anio = fechaNovedad.getFullYear();
-        var mes = fechaNovedad.getMonth() + 1;
-        var dia = fechaNovedad.getDate();
+    } catch(error) {
 
-        const registro = {
-            id_novedad: null,
-            titulo: req.body.tituloNovedad,
-            subtitulo: req.body.subtituloNovedad,
-            contenido: req.body.contenidoNovedad,
-            fecha: anio + '-' + mes + '-' + dia
-        }
+        console.log(error);
+        res.render('./admin/cargar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, mensajeError: "--no se pudo cargar la novedad--"});
 
-        await consulta.insertarNovedad(registro);
-
-        res.redirect('/admin/novedades');
-
-        //console.log(req.session == undefined)
-
-    }        
+    }
 
 })
 
