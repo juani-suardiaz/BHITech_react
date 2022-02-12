@@ -6,9 +6,9 @@
 
 <form id="formularioNovedad" action="/admin/novedades/cargar" method="post">
 
-    <p><input type="text" name="tituloNovedad" placeholder="TITULO" required></p>
-    <p><input type="text" name="subtituloNovedad" placeholder="SUBTITULO" required></p>
-    <p><textarea name="contenidoNovedad" cols="30" rows="10" maxlength="5000" placeholder="TEXTO" required></textarea></p>
+    <p><input type="text" name="tituloNovedad" placeholder="TITULO" value="{{novedad.titulo}}" required></p>
+    <p><input type="text" name="subtituloNovedad" placeholder="SUBTITULO" value="{{novedad.subtitulo}}" required></p>
+    <p><textarea name="contenidoNovedad" cols="30" rows="10" maxlength="5000" placeholder="TEXTO" required>{{novedad.contenido}}</textarea></p>
     <p><input type="submit" value="CARGAR"></p>
 
 </form>

@@ -53,7 +53,7 @@ router.post('/cargar', async function (req, res, next) {
             var mes = fechaNovedad.getMonth() + 1;
             var dia = fechaNovedad.getDate();
     
-            const registro = {
+            var registro = {
                 id_novedad: null,
                 titulo: req.body.tituloNovedad,
                 subtitulo: req.body.subtituloNovedad,
@@ -72,7 +72,7 @@ router.post('/cargar', async function (req, res, next) {
     } catch(error) {
 
         console.log(error);
-        res.render('./admin/cargar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, mensajeError: "--no se pudo cargar la novedad--"});
+        res.render('./admin/cargar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, mensajeError: "--no se pudo cargar la novedad--", novedad: registro});
 
     }
 
@@ -100,26 +100,35 @@ router.get('/modificar/:id', async function (req, res, next) {
 
 router.post('/modificar/:id', async function (req, res, next) {
 
-    if (req.session.id_usuario == undefined) {
+    try {
 
-        res.redirect('/admin/login');
+        if (req.session.id_usuario == undefined) {
 
-    } else {
+            res.redirect('/admin/login');
+    
+        } else {
+    
+            var registro = {            
+                titulo: req.body.tituloNovedad,
+                subtitulo: req.body.subtituloNovedad,
+                contenido: req.body.contenidoNovedad,
+                id_novedad: req.params.id
+            }
+    
+            await consulta.modificarNovedad(registro);
+    
+            res.redirect('/admin/novedades');
+    
+            //console.log(req.session == undefined)
+    
+        }        
 
-        const registro = {            
-            titulo: req.body.tituloNovedad,
-            subtitulo: req.body.subtituloNovedad,
-            contenido: req.body.contenidoNovedad,
-            id_novedad: req.params.id
-        }
+    } catch(error) {
 
-        await consulta.modificarNovedad(registro);
+        console.log(error);
+        res.render('./admin/modificar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, mensajeError: "--no se pudo modificar la novedad--", novedad: registro});
 
-        res.redirect('/admin/novedades');
-
-        //console.log(req.session == undefined)
-
-    }        
+    }
 
 })
 
@@ -147,21 +156,41 @@ router.get('/eliminar/:id', async function (req, res, next) {
 
 router.post('/eliminar/:id', async function (req, res, next) {
 
-    if (req.session.id_usuario == undefined) {
+    try {
 
-        res.redirect('/admin/login');
+        if (req.session.id_usuario == undefined) {
 
-    } else {
+            res.redirect('/admin/login');
+    
+        } else {
+    
+            var num_novedad = req.params.id;
+    
+            await consulta.eliminarNovedad(num_novedad);
+    
+            res.redirect('/admin/novedades');
+    
+            //console.log(req.session == undefined)
+    
+        }        
 
-        var num_novedad = req.params.id;
+    } catch(error) {
 
-        await consulta.eliminarNovedad(num_novedad);
+        // se carga el registro para cargar de vuelta el formulario
+        
+        var registro = {            
+            titulo: req.body.tituloNovedad,
+            subtitulo: req.body.subtituloNovedad,
+            contenido: req.body.contenidoNovedad,
+            id_novedad: req.params.id,
+            fecha: req.body.fechaNovedad
+        }        
 
-        res.redirect('/admin/novedades');
+        console.log(error);
+        //console.log(registro);
+        res.render('./admin/eliminar',{layout: './admin/layout', mensaje: "USUARIO: " + req.session.nombre_usuario, mensajeError: "--no se pudo eliminar la novedad--", novedad: registro});
 
-        //console.log(req.session == undefined)
-
-    }        
+    }
 
 })
 

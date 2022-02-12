@@ -54,16 +54,33 @@ async function buscarNovedad (id) {
 
 async function modificarNovedad (registro) {
 
-    var consulta = 'UPDATE novedades SET titulo = ?, subtitulo = ?, contenido = ? WHERE id_novedad = ?;';
+    try {
 
-    await pool.query(consulta, [registro.titulo, registro.subtitulo, registro.contenido, registro.id_novedad]);
+        var consulta = 'UPDATE novedades SET titulo = ?, subtitulo = ?, contenido = ? WHERE id_novedad = ?;';
+
+        await pool.query(consulta, [registro.titulo, registro.subtitulo, registro.contenido, registro.id_novedad]);
+
+    } catch(error) {
+
+        throw error;
+
+    }    
+
 }
 
 async function eliminarNovedad (id) {
 
-    var consulta = 'DELETE FROM novedades WHERE id_novedad = ?';
+    try {
 
-    await pool.query(consulta,[id]);
+        var consulta = 'DELETE FROM novedades WHERE id_novedad = ?';
+
+        await pool.query(consulta,[id]);        
+
+    } catch(error) {
+
+        throw error;
+
+    }
 
 }
 

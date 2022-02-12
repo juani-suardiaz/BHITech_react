@@ -2,15 +2,15 @@
 
 <a id="botonCerrarSesion" href="/admin/login/logout">CERRAR SESION</a>
 
-<h2>Eliminar novedad</h2>
+<h2>Eliminar novedad <span style="color: red">{{mensajeError}}</span></h2>
 
 <form id="formularioNovedad" action="/admin/novedades/eliminar/{{novedad.id_novedad}}" method="post">
 
-    <p><input type="text" disabled value="{{novedad.id_novedad}}"></p>
-    <p><input type="text" name="tituloNovedad" disabled value="{{novedad.titulo}}"></p>
-    <p><input type="text" name="subtituloNovedad" disabled value="{{novedad.subtitulo}}"></p>
-    <p><textarea name="contenidoNovedad" cols="30" rows="10" maxlength="5000" disabled>{{novedad.contenido}}</textarea></p>
-    <p><input type="text" disabled value="{{novedad.fecha}}"></p>
+    <p><input type="text" readonly value="{{novedad.id_novedad}}"></p>
+    <p><input type="text" name="tituloNovedad" readonly value="{{novedad.titulo}}"></p>
+    <p><input type="text" name="subtituloNovedad" readonly value="{{novedad.subtitulo}}"></p>
+    <p><textarea name="contenidoNovedad" cols="30" rows="10" maxlength="5000" readonly>{{novedad.contenido}}</textarea></p>
+    <p><input name="fechaNovedad" type="text" readonly value="{{novedad.fecha}}"></p>
     <p><input type="submit" value="ELIMINAR"></p>
 
 </form>
