@@ -17,6 +17,7 @@ main .holder{
     border-right: dashed 1px black;
     padding-top: 10px;
     padding-bottom: 30px;
+    min-height: 400px;
 }
 
 section{

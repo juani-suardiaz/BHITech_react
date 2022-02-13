@@ -1,7 +1,29 @@
 import React from 'react';
 import "../styles/components/pages/Novedades.css"
 
+import {useState, useEffect} from 'react';
+import axios from 'axios';
+import NovedadItem from '../components/novedades/NovedadItem';
+
 function Novedades () {
+
+    const [loading, setLoading] = useState(false);
+    const [novedades, setNovedades] = useState([]);
+
+    useEffect(function () {
+        
+        async function cargarNovedades() {
+
+            setLoading(true);
+            const response = await axios.get('http://localhost:3000/api/novedades');
+            setNovedades(response.data);
+            setLoading(false);
+        
+        }
+
+        cargarNovedades();
+       
+    }, []);
 
     return (
 
@@ -11,32 +33,13 @@ function Novedades () {
 
                 <h1>#Tablón_de_novedades</h1>
 
-                <article class="cajaNovedad">
-                    <div class="tituloNovedad">TITULO</div>
-                    <div class="subtituloNovedad">subtítulo</div>
-                    <div class="fechaNovedad">fecha</div>
-                    <div class="textoNovedad">Lorem ipsum dolor sit amet consectetur adipisicing elit. In perspiciatis, tempora quos dolore
-                        eligendi quo corporis porro inventore quia quod. Soluta, blanditiis? Est itaque explicabo, placeat
-                        at iusto nemo eligendi!</div>
-                </article>
-
-                <article class="cajaNovedad">
-                    <div class="tituloNovedad">TITULO</div>
-                    <div class="subtituloNovedad">subtítulo</div>
-                    <div class="fechaNovedad">fecha</div>
-                    <div class="textoNovedad">Lorem ipsum dolor sit amet consectetur adipisicing elit. In perspiciatis, tempora quos dolore
-                        eligendi quo corporis porro inventore quia quod. Soluta, blanditiis? Est itaque explicabo, placeat
-                        at iusto nemo eligendi!</div>
-                </article>
-                
-                <article class="cajaNovedad">
-                    <div class="tituloNovedad">TITULO</div>
-                    <div class="subtituloNovedad">subtítulo</div>
-                    <div class="fechaNovedad">fecha</div>
-                    <div class="textoNovedad">Lorem ipsum dolor sit amet consectetur adipisicing elit. In perspiciatis, tempora quos dolore
-                        eligendi quo corporis porro inventore quia quod. Soluta, blanditiis? Est itaque explicabo, placeat
-                        at iusto nemo eligendi!</div>
-                </article>            
+                {loading ? (
+                    <p>cargando...</p>
+                ):(
+                    novedades.map(function (item) {
+                        return <NovedadItem id={item.id} titulo={item.titulo} subtitulo={item.subtitulo} contenido={item.contenido} fecha={item.fecha}/>
+                    })
+                )}
 
             </div>
 
