@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-02-2022 a las 23:17:07
+-- Tiempo de generación: 18-02-2022 a las 00:21:58
 -- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
@@ -35,16 +35,14 @@ CREATE TABLE IF NOT EXISTS `novedades` (
   `contenido` text NOT NULL,
   `fecha` date NOT NULL,
   PRIMARY KEY (`id_novedad`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `novedades`
 --
 
 INSERT INTO `novedades` (`id_novedad`, `titulo`, `subtitulo`, `contenido`, `fecha`) VALUES
-(42, 'buscando a nemo', 'pixar', 'pelicula de un pececito', '2022-02-12'),
-(43, 'toy story', 'pixar', 'de unos juguetitos', '2022-02-12'),
-(44, 'el origen', 'warner', 'de los sueños', '2022-02-12');
+(47, 'Exámenes de febrero / marzo', 'Fechas confirmadas de las mesas de exámenes', 'Se avisa a los estudiantes que se encuentran publicadas, en el hall de entrada del edificio, las fechas de los exámenes finales de febrero / marzo 2022.', '2022-02-16');
 
 -- --------------------------------------------------------
 
